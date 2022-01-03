@@ -215,14 +215,12 @@
 <p>这篇文章是备考PAT过程中的一些笔记，记录下来作为一个纪念吧哈哈哈哈</p>
 </blockquote>
 <span id="more"></span>
-
-
-
 <h2 id="string相关"><a href="#string相关" class="headerlink" title="string相关"></a>string相关</h2><ul>
 <li><p><code>substr(pos,len)</code>函数返回从pos下标开始，长度为len的子串</p>
 </li>
 <li><p>string类型的转换</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">string str;</span><br><span class="line"><span class="keyword">int</span> i;</span><br><span class="line">str.<span class="built_in">c_str</span>();  <span class="comment">//string转换成char[]</span></span><br><span class="line"><span class="built_in">to_string</span>(i); <span class="comment">//int转化为string</span></span><br><span class="line"><span class="built_in">stoi</span>(str);  <span class="comment">//string转int方法一 C++11</span></span><br><span class="line"><span class="built_in">atoi</span>(str.<span class="built_in">c_str</span>()); <span class="comment">//string转int方法二</span></span><br></pre></td></tr></table></figure></li>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">string str;</span><br><span class="line"><span class="keyword">int</span> i;</span><br><span class="line">str.<span class="built_in">c_str</span>();  <span class="comment">//string转换成char[]</span></span><br><span class="line"><span class="built_in">to_string</span>(i); <span class="comment">//int转化为string</span></span><br><span class="line"><span class="built_in">stoi</span>(str);  <span class="comment">//string转int方法一 C++11</span></span><br><span class="line"><span class="built_in">atoi</span>(str.<span class="built_in">c_str</span>()); <span class="comment">//string转int方法二</span></span><br></pre></td></tr></table></figure>
+</li>
 <li><p>大小写转换，<code>tolower()</code>函数和<code>toupper()</code>函数，函数在头文件<code>cctype</code>中</p>
 </li>
 <li><p><strong>string相关函数总结</strong></p>
@@ -232,33 +230,19 @@
 </li>
 <li><p>insert(it, it2, it3) it为与插入位置，it2，it3为待插入字符串首尾迭代器，将串[it2, it3)插入到it的位置上<strong>（迭代器定位）</strong></p>
 </li>
-</ul>
-</blockquote>
-<blockquote>
-<ul>
-<li>erase(it) 删除it迭代器位置的元素（删除单个元素）</li>
+<li><p>erase(it) 删除it迭代器位置的元素（删除单个元素）</p>
+</li>
 <li>erase(first, second) 删除[first, second)区间元素，first和second为迭代器</li>
-<li>erase(pos,length) pos为删除起始位置，length为删除的个数</li>
-</ul>
-</blockquote>
-<blockquote>
-<ul>
-<li>substr(pos, lenth) pos位开始，长度为length的子串</li>
-</ul>
-</blockquote>
-<blockquote>
-<ul>
-<li>string::npos  可以作为find函数失败时的返回值</li>
-</ul>
-</blockquote>
-<blockquote>
-<ul>
-<li>str.find(str2,pos) 返回子串str2在str中第一次出现的位置，若没有子串str2返回string::npos, pos可以加也可以不加，加上后表示从pos号位开始查询</li>
-</ul>
-</blockquote>
-<blockquote>
-<ul>
-<li>str.repalce(pos, len,str2) 将str从pos位开始长度为len的子串替换为str2</li>
+<li><p>erase(pos,length) pos为删除起始位置，length为删除的个数</p>
+</li>
+<li><p>substr(pos, lenth) pos位开始，长度为length的子串</p>
+</li>
+<li><p>string::npos  可以作为find函数失败时的返回值</p>
+</li>
+<li><p>str.find(str2,pos) 返回子串str2在str中第一次出现的位置，若没有子串str2返回string::npos, pos可以加也可以不加，加上后表示从pos号位开始查询</p>
+</li>
+<li><p>str.repalce(pos, len,str2) 将str从pos位开始长度为len的子串替换为str2</p>
+</li>
 <li>str.replace(it1,it2,str2) 将子串[it1,it2)替换为str2</li>
 </ul>
 </blockquote>
@@ -317,15 +301,17 @@
 <li><p><strong>进制转换</strong>：将十进制数 y 转化为Q进制，每次将 y 除 Q 的余数保存到<strong>数组 z[]</strong> 中，最后将 z 数组逆序输出；注意，<strong>循环最好用</strong><code>do&#123;&#125;while()</code> ，否则当 y 为0的时候可以会直接跳出，z[] 中将不会有元素</p>
 </li>
 <li><p>素数表的建立 <code>int prime[maxn],num=0</code> 表长maxn至少比n（要输出的最大范围）大1</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//素数筛</span></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn=<span class="number">101</span>;</span><br><span class="line"><span class="keyword">int</span> prime[maxn],num=<span class="number">0</span>;</span><br><span class="line"><span class="keyword">bool</span> p[maxn];</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">findPrime</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">2</span>;i&lt;maxn;i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(p[i]==<span class="literal">false</span>)&#123;</span><br><span class="line">            prime[num++]=i;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j=i+i;j&lt;maxn;j+=i)</span><br><span class="line">            &#123;</span><br><span class="line">                p[j]=<span class="literal">true</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//素数筛</span></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn=<span class="number">101</span>;</span><br><span class="line"><span class="keyword">int</span> prime[maxn],num=<span class="number">0</span>;</span><br><span class="line"><span class="keyword">bool</span> p[maxn];</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">findPrime</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">2</span>;i&lt;maxn;i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(p[i]==<span class="literal">false</span>)&#123;</span><br><span class="line">            prime[num++]=i;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j=i+i;j&lt;maxn;j+=i)</span><br><span class="line">            &#123;</span><br><span class="line">                p[j]=<span class="literal">true</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
 <li><p>质因数分解</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//用结构体数组存储质因子</span></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">factor</span>&#123;</span></span><br><span class="line">    <span class="keyword">int</span> x,cnt;</span><br><span class="line">&#125;fac[<span class="number">10</span>];</span><br><span class="line"><span class="comment">//数组大小开到10就可以处理int范围内的值了</span></span><br><span class="line"><span class="comment">//因为2*3*5*7*11*13*17*19*23*29已经超过int最大值</span></span><br></pre></td></tr></table></figure></li>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//用结构体数组存储质因子</span></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">factor</span>&#123;</span></span><br><span class="line">    <span class="keyword">int</span> x,cnt;</span><br><span class="line">&#125;fac[<span class="number">10</span>];</span><br><span class="line"><span class="comment">//数组大小开到10就可以处理int范围内的值了</span></span><br><span class="line"><span class="comment">//因为2*3*5*7*11*13*17*19*23*29已经超过int最大值</span></span><br></pre></td></tr></table></figure>
+</li>
 <li><p>分数的计算，用一个结构体存储分数，注意分数的化简当分子为0时将分母置为1，方便作为整数输出，其他情形将分子分母约分就可以了</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">fraction</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="keyword">int</span> up,down;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">fraction</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="keyword">int</span> up,down;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
 <li><p>大整数</p>
 <p>①大整数可以使用结构体存储，如下所示，但是由于运算时总是从整数低位到整数高位进行枚举，所以为了方便，结构体中<strong>数组低位存储整数高位</strong>，直观上看就是带过来存储。当然<strong>用string存储也是可以的</strong>，有时候做题显得更简单</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">bign</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="keyword">int</span> d[<span class="number">1000</span>];</span><br><span class="line">    <span class="keyword">int</span> len;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <p>②大整数运算——将运算步骤转化为代码</p>
 <ul>
 <li>加法：从低位依次枚举，<strong>和的个位赋给结果的相应位</strong>，<strong>十位为下一位的进位</strong>，枚举完毕后若进位carry不为零，将其赋给结果最高位</li>
@@ -343,7 +329,7 @@
 <h2 id="二分法"><a href="#二分法" class="headerlink" title="二分法"></a>二分法</h2><ul>
 <li><p>二分法的实现很简单，给定查询区间<code>[left,right]</code>，每次根据中心点<code>mid=(left+right)</code>处的值与查询值的大小关系更新left和right就可以了，循环的条件是<code>left&lt;=right</code>，即<code>left&gt;right</code>时跳出，此时查询失败</p>
 </li>
-<li><p>寻找第一个大于等于x的元素A[y]，A[y]一定满足：**A[y]&gt;=x&gt;A[y-1]**，故A[mid]&gt;=x时 A[mid]&gt;=x&gt;A[y-1]⇨ mid&gt;y-1⇨mid&gt;=y⇨向区间[left,<strong>mid</strong>]查询；当A[mid]&lt;x同理可得到向区间[<strong>mid+1</strong>,right]查询。</p>
+<li><p>寻找第一个大于等于x的元素A[y]，A[y]一定满足：<strong>A[y]&gt;=x&gt;A[y-1]</strong>，故A[mid]&gt;=x时 A[mid]&gt;=x&gt;A[y-1]⇨ mid&gt;y-1⇨mid&gt;=y⇨向区间[left,<strong>mid</strong>]查询；当A[mid]&lt;x同理可得到向区间[<strong>mid+1</strong>,right]查询。</p>
 <p>并且还要注意：①<strong>循环条件为left&lt;right</strong>，因为即使查询失败也要返回“假设它存在，它应该在的位置”；②由于查询元素可能比序列中所有元素要大，故<strong>传入函数的初值right应该比序列上界大1</strong>，即传入[left,right]=[0,n]。</p>
 </li>
 </ul>
@@ -360,7 +346,7 @@
 <li>对于将某个性质相同的元素进行合并的题目，可以记录第一个出现该性质的元素下标，将后序所有该性质的元素直接与记录的元素合并就可以了，这样可以避免反复遍历查询。</li>
 </ul>
 <h2 id="最短路径"><a href="#最短路径" class="headerlink" title="最短路径"></a>最短路径</h2><ul>
-<li>Bellman-Ford算法不需要<code>vis[]</code>数组，它总共进行<code>V-1</code>轮操作，每一轮操作都遍历所有的边，判断是否有能被更新的距离，时间复杂度为O(VE)。唯一与dijkstra算法不同的一点在于<strong>统计最短路径条数的做法</strong>，因为DF算法会多次访问已经访问过的结点，为了解决这个问题可以设置一个<strong>set&lt;int&gt; pre[maxn]</strong> 来存储前驱节点，当<strong>遇到与已有最短路径相同长度的路径是需要重新计算最短路径条数</strong>。</li>
+<li>Bellman-Ford算法不需要<code>vis[]</code>数组，它总共进行<code>V-1</code>轮操作，每一轮操作都遍历所有的边，判断是否有能被更新的距离，时间复杂度为O(VE)。唯一与dijkstra算法不同的一点在于<strong>统计最短路径条数的做法</strong>，因为DF算法会多次访问已经访问过的结点，为了解决这个问题可以设置一个<strong>set\<int\> pre[maxn]</strong> 来存储前驱节点，当<strong>遇到与已有最短路径相同长度的路径是需要重新计算最短路径条数</strong>。</li>
 <li>SPFA算法是使用队列优化了BF算法，因为<strong>只有某个顶点u的d[u]改变时，从它出发的边的邻接点v的d[v]值才有可能被改变</strong>，所以每次都将改变过的结点入队，去看看以这些点为中介点能否优化其他路径。实现过程中有几点要注意，①要设置一个inq[]数组，记录<strong>“当前状态”在队列中结点</strong>，因为如果结点已经在队列中的话就不需要反复入队了；②设置num[]数组，记录结点入队次数，如果某个<strong>结点入队次数超过n-1次说明图中有负环</strong></li>
 <li>另外SPFA算法和BF算法最好用邻接表实现，这样效率更好。SPFA算法也比朴素dijkstra算法快很多，据算法笔记上说，它甚至经常性优于堆优化的dijkstra算法。</li>
 <li>Floyd算法的流程：枚举所有的顶点，如果以它为中介点能让其他两点间的距离缩小则更新这个最短距离。Floyd算法实现很简单只需要一个二维数组dis[maxn][maxn]即可。</li>
@@ -395,7 +381,7 @@
 <p>1.<code>do&#123;&#125;while()</code>语句</p>
 <p>2.<code>while(1)&#123;&#125;</code>在循环体中加入<code>break</code>语句控制什么时候跳出</p>
 </li>
-<li><p><code>while(scanf(&quot;%d&quot;,&amp;n) != EOF)&#123;&#125;</code>表示直到没有输入为止停止循环，另外在终端中输入&lt;ctrl+Z&gt;和回车键表示EOF</p>
+<li><p><code>while(scanf(&quot;%d&quot;,&amp;n) != EOF)&#123;&#125;</code>表示直到没有输入为止停止循环，另外在终端中输入<ctrl+Z>和回车键表示EOF</p>
 </li>
 <li><p>不要用<strong>循环中会改变的量</strong>初始某个变量，最好在循环外面将初始值单独存下来</p>
 <p>使用<code>while</code>循环的时候注意<strong>更新变量</strong></p>
@@ -418,7 +404,8 @@
 </li>
 <li><p><strong>set</strong>的主要作用有<strong>自动去重和按升序排列</strong>，在某些情况下查找的效率是比较高的（可以解决一些超时问题），涉及排序的题可以考虑使用</p>
 <p>另外对于结构体，可以通过通过重载小于号<code>&lt;</code>使得set中元素按照需要的顺序排列，一种实现方式是使用友元函数，如下所示：</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Node</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="comment">//其他部分省略</span></span><br><span class="line">    <span class="keyword">friend</span> <span class="keyword">bool</span> <span class="keyword">operator</span> &lt;(Node a,Node b)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">//....</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></li>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Node</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="comment">//其他部分省略</span></span><br><span class="line">    <span class="keyword">friend</span> <span class="keyword">bool</span> <span class="keyword">operator</span> &lt;(Node a,Node b)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">//....</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+</li>
 <li><p><code>vector</code>的最后一个元素下标是<code>vector.size()-1</code>，<strong>不要访问越界了</strong>！</p>
 </li>
 <li><p><strong>判断是不是完全⼆叉树</strong>，就看在出现了⼀个孩⼦为空的结点之后是否还会出现孩⼦结点不为空的结点，如果出现了就不是完全⼆叉树。</p>
@@ -452,8 +439,9 @@
 <li><p>遍历可以一次遍历所有的”连通块“，计算遍历的次数可以知道连通块的数量。</p>
 </li>
 <li><p>随机数生成</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//要包含stdlib和time头文件</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdlib.h&gt;</span>   <span class="comment">//可以替换成cstdlib</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;time.h&gt;</span>    <span class="comment">//可以替换成ctime</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">srand</span>((<span class="keyword">unsigned</span>)<span class="built_in">time</span>(<span class="literal">NULL</span>));  <span class="comment">//生成随机数种子</span></span><br><span class="line">    <span class="built_in">rand</span>(); <span class="comment">//生成随机数 范围[0,RAND_MAX]</span></span><br><span class="line">    <span class="built_in">rand</span>()%(a-b+<span class="number">1</span>)+b; <span class="comment">//[a,b]范围随机数</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment">//当要生成的随机数范围长度超过RAND_MAX时可以这样写</span></span><br><span class="line">    <span class="built_in">round</span>((<span class="built_in">rand</span>()*<span class="number">1.0</span>/RAND_MAX*(a-b)+b));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-<li><p>vector&lt;int&gt;作为元素本身也是可以用sort函数直接排序的，排序默认是按照vector&lt;int&gt;序列的“字典序”</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//要包含stdlib和time头文件</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdlib.h&gt;</span>   <span class="comment">//可以替换成cstdlib</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;time.h&gt;</span>    <span class="comment">//可以替换成ctime</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">srand</span>((<span class="keyword">unsigned</span>)<span class="built_in">time</span>(<span class="literal">NULL</span>));  <span class="comment">//生成随机数种子</span></span><br><span class="line">    <span class="built_in">rand</span>(); <span class="comment">//生成随机数 范围[0,RAND_MAX]</span></span><br><span class="line">    <span class="built_in">rand</span>()%(a-b+<span class="number">1</span>)+b; <span class="comment">//[a,b]范围随机数</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment">//当要生成的随机数范围长度超过RAND_MAX时可以这样写</span></span><br><span class="line">    <span class="built_in">round</span>((<span class="built_in">rand</span>()*<span class="number">1.0</span>/RAND_MAX*(a-b)+b));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>vector\<int>作为元素本身也是可以用sort函数直接排序的，排序默认是按照vector\<int>序列的“字典序”</p>
 </li>
 </ul>
 
