@@ -183,10 +183,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2022-01-03 20:04:33 / 修改时间：21:34:59" itemprop="dateCreated datePublished" datetime="2022-01-03T20:04:33+08:00">2022-01-03</time>
+              <time title="创建时间：2022-01-03 20:04:33" itemprop="dateCreated datePublished" datetime="2022-01-03T20:04:33+08:00">2022-01-03</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-01-04 15:23:03" itemprop="dateModified" datetime="2022-01-04T15:23:03+08:00">2022-01-04</time>
+              </span>
 
           
 
@@ -200,9 +206,16 @@
 
       
           <h2 id="Distance-Metric"><a href="#Distance-Metric" class="headerlink" title="Distance Metric"></a>Distance Metric</h2><ul>
-<li>L1 distance:   $d_1(I_1,I_2)=\sum\limits_p|I_1^p-I_2^p|$ </li>
-<li></li>
+<li>L1(Manhattan) distance:  $d_1(I_1,I_2)=\sum\limits_p|I_1^p-I_2^p|$ </li>
+<li>L2(Euclidean) distance:  $d_2(I_1,I_2)=\sqrt{\sum\limits_p(I_1^p-I_2^p)^2}$</li>
 </ul>
+<p>Simply by <strong>specifying different distance metrics</strong>, we can actually apply the k-nearest neighbor algorithm very generally to basically any type of data.</p>
+<h2 id="Hyperparameters"><a href="#Hyperparameters" class="headerlink" title="Hyperparameters"></a>Hyperparameters</h2><p>Hyperparameters: choices about the algorithm that we set rather than learn.</p>
+<p>Setting hyperparameters:</p>
+<ul>
+<li>Choose hyperparameters that work best on the data  ——&gt;  BAD</li>
+</ul>
+<p><img src="/images/cs231n-2-1.png" style="zoom: 67%;" /></p>
 
       
     </div>
